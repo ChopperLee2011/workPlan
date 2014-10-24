@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Work Plan</title>
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/ng-table/ng-table.js"></script>
+    <!--   <script data-require="ng-table-export@0.1.0" data-semver="0.1.0" src="http://bazalt-cms.com/assets/ng-table-export/0.1.0/ng-table-export.js"></script> -->
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./lib/ng-table/ng-table.css" />
+    <link rel="stylesheet" href="./lib/bootstrap-css-only/css/bootstrap.min.css" />
+    <script src="./javascript/main.js"></script>
+</head>
+
+<body ng-app="main" ng-controller="DemoCtrl" ng-init="init()">
+    <form name='planFrm' accept-charset="utf-8" ng-submit="submit()" novalidat>
+        <div class="form-group">
+            <h3 class="text-center">
+                Employee Work Plan
+            </h3>
+        </div>
+         <!-- Text input-->
+          <label class="control-label" for="input01">Days</label>
+          <div class="controls">
+            <input type="text" placeholder="days" class="input-xlarge" ng-model="days">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">Col1</label>
+          <div class="controls">
+            <input type="text" placeholder="Col1" class="input-xlarge" ng-model="col1">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">Col2</label>
+          <div class="controls">
+            <input type="text" placeholder="Col2" class="input-xlarge" ng-model="col2">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+        <table ng-table="tableParams" class="table">
+            <tr ng-repeat="user in $data">
+                <td data-title="'Name'">
+                    <span ng-if="!user.$edit">{{user.name}}</span>
+                    <div ng-if="user.$edit">
+                        <input class="form-control" type="text" ng-model="user.name" />
+                    </div>
+                </td>
+                <td data-title="'Sunday'" width="200">
+                    <span ng-if="!user.$edit">{{user.plan.Sun}}</span>
+                    <div ng-if="user.$edit">
+                        <input class="form-control" type="number" ng-model="user.plan.Sun" />
+                    </div>
+                </td>
+                <td data-title="'Monday'" width="200">
+                    <span ng-if="!user.$edit">{{user.plan.Mon}}</span>
+                    <div ng-if="user.$edit">
+                        <input class="form-control" type="number" ng-model="user.plan.Mon" />
+                    </div>
+                </td>
+                <td data-title="'Tuesday'" width="200">
+                    <span ng-if="!user.$edit">{{user.plan.Tue}}</span>
+                    <div ng-if="user.$edit">
+                        <input class="form-control" type="number" ng-model="user.plan.Tue" />
+                    </div>
+                </td>
+                <td data-title="'Wednesday'" width="200">
+                    <span ng-if="!user.$edit">{{user.plan.Wed}}</span>
+                    <div ng-if="user.$edit">
+                        <input class="form-control" type="number" ng-model="user.plan.Wed" />
+                    </div>
+                </td>
+                <td data-title="'Thursday'" width="200">
+                    <span ng-if="!user.$edit">{{user.plan.Thu}}</span>
+                    <div ng-if="user.$edit">
+                        <input class="form-control" type="number" ng-model="user.plan.Thu" />
+                    </div>
+                </td>
+                <td data-title="'Friday'" width="200">
+                    <span ng-if="!user.$edit">{{user.plan.Fri}}</span>
+                    <div ng-if="user.$edit">
+                        <input class="form-control" type="number" ng-model="user.plan.Fri" />
+                    </div>
+                </td>
+                <td data-title="'Saturday'" width="200">
+                    <span ng-if="!user.$edit">{{user.plan.Sat}}</span>
+                    <div ng-if="user.$edit">
+                        <input class="form-control" type="number" ng-model="user.plan.Sat" />
+                    </div>
+                </td>
+                <td data-title="'Actions'" width="200">
+                    <a ng-if="!user.$edit" href="" class="btn btn-default btn-xs" ng-click="user.$edit = true">Edit</a>
+                    <a ng-if="user.$edit" href="" class="btn btn-primary btn-xs" ng-click="user.$edit = false">Save</a>
+                </td>
+            </tr>
+        </table>
+        <button type="button" class="btn btn-primary" ng-click="AddEmployee()" >Add</button>
+        <button type="submit" class="btn btn-sucess">Submit</button>
+    </form>
+</body>
+
+</html>

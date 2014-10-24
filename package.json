@@ -1,0 +1,11 @@
+{
+  "name": "work-plan",
+  "version": "0.0.1",
+  "description": "work plan demo",
+  "main": "server.js",
+  "author": "ChopperLee2011 <lihengpro@gmail.com>",
+  "dependencies": {
+    "body-parser": "^1.9.1",
+    "express": "4.7.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "work-plan",
+  "version": "0.0.1",
+  "authors": [
+    "ChopperLee2011 <lihengpro@gmail.com>"
+  ],
+  "description": "work plan demo",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-css-only": "~3.2.0",
+    "ng-table": "~0.3.3"
+  }
+}
