@@ -5,3 +5,11 @@ body {
 .ng-table {
     border: 1px solid #000;
 }
+
+td.redbgcolor{
+	background-color:"#FF0000" ;
+}
+
+td.greenbgcolor{
+	background-color:"#00FF00";
+}
