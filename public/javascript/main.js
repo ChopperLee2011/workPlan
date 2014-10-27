@@ -1,5 +1,5 @@
 var app = angular.module('main', ['ngTable'])
-    .controller('DemoCtrl', function($scope, ngTableParams, $http, $sce ) {
+    .controller('DemoCtrl', function($scope, ngTableParams, $http, $sce) {
         var data = [];
         $scope.init = function() {
             data = [{
@@ -111,7 +111,11 @@ var app = angular.module('main', ['ngTable'])
             $scope.tableParams.reload();
 
         };
+        $scope.RemoveEmployee = function(index) {
+            data.splice(index, 1);
+            $scope.tableParams.reload();
 
+        };
         $scope.submit = function() {
             var formData = {
                 days: $scope.days,
@@ -149,9 +153,9 @@ var app = angular.module('main', ['ngTable'])
                     "plan": plan.split('')
                 });
             }
-            for(var j = 1 ; j <= plan.length; j++){
-                    $scope.days.push('Day '+j);
-                };
+            for (var j = 1; j <= plan.length; j++) {
+                $scope.days.push('Day ' + j);
+            };
 
 
         });

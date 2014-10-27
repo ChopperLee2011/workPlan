@@ -101,6 +101,7 @@
                 <td data-title="'Actions'" width="200">
                     <a ng-if="!user.$edit" href="" class="btn btn-default btn-xs" ng-click="user.$edit = true">Edit</a>
                     <a ng-if="user.$edit" href="" class="btn btn-primary btn-xs" ng-click="user.$edit = false">Save</a>
+                    <a ng-if="user.$edit" href="" class="btn btn-danger btn-xs" ng-click="RemoveEmployee($index)">Remove</a>
                 </td>
             </tr>
         </table>
